@@ -1,0 +1,134 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* --------------------- GLOBAL STYLES --------------------- */
+
+:root{
+	--white: #F5F5F5;
+	--green: #33CA7F;
+	--black: #444444;
+	--red: #EF6351;
+	--orange: #FFA500;
+    --blue: #70D6FF;
+}
+
+.vollkorn {
+    font-family: "Vollkorn", serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.hide {
+    position: absolute;
+	left: -10000px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+body {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+mark {
+    background-color: var(--red);
+    color: var(--white);
+    font-weight: 600;
+    padding: 0 5px;
+}
+
+h1 {
+    font-size: 5em;
+}
+
+h2 {
+    font-size: 3em;
+}
+
+p, label, input, button, a {
+    font-family: "Vollkorn", serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--black);
+}
+
+header{
+    margin: 20vh 30vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 5vh;
+    text-align: center;
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+}
+
+nav ul a {
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 2s;
+}
+
+nav ul a:hover {
+    color: var(--red);
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 20vh;
+    text-align: center;
+}
