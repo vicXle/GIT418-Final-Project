@@ -10,16 +10,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="slick/slick.scss">
-    <link rel="stylesheet" type="text/css" href="slick/accessible-slick-theme.scss">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script async src="script.js"></script>
+
+    <link rel="stylesheet" href="jquery-ui-1.13.2.custom/jquery-ui.min.css">
+    <script src="jquery-ui-1.13.2.custom/external/jquery/jquery.js"></script>
+    <script src="jquery-ui-1.13.2.custom/jquery-ui.min.js"></script>
+
+    <script src="jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <header>
         <h1 class="vollkorn">Gourmet Gatherings</h1>
-        <p>Can't decide what to make for dinner? You've come to the right place! Find you favorite recipes to impress your guests <mark>(maybe you'll even impress yourself!)</mark></p>
+        <p>Can't decide what to make for dinner? You've come to the right place! Find your favorite recipes <mark>to impress your guests</mark></p>
         <nav>
             <h2 class="hide">Main Navigation</h2>
             <ul>
@@ -31,15 +32,13 @@
     <main>
         <section id="carousel">
             <h2 class="vollkorn">Top Picks</h2>
-            <div class="top-picks"></div>
-
-            <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-            <script type="text/javascript" src="slick/slick.min.js"></script>
+            <div class="top-picks">
+            </div>
         </section>
 
         <section id="findRecipes">
             <h2 class="vollkorn">Find Recipes!</h2>
-            <div class="find">
+            <div id="find">
                 <label for="filter">Search for Specific Recipes</label>
                 <input type="text" id="filter" name="filter">
                 <button type="button" id="findButton">Find</button>
@@ -53,35 +52,26 @@
         <section id="register">
             <h2 class="vollkorn">Want to join our community?</h2>
             <p>Register to our newsletter!</p>
+            <p id="personInfo"></p>
 
-            <p id="objectDisplay"></p>
-            <form>
-                <label for="firstName">First Name:<span class="required">*</span></label>
-                <span class="message">Please enter your first name</span>
-                <input type="text" name="firstName" id="firstName">
-
-                <label for="lastName">Last Name:<span class="required">*</span></label>
-                <span class="message">Please enter your last name</span>
-                <input type="text" name="lastName" id="lastName">
-
-                <label for="myEmail">Email Address:<span class="required">*</span></label>
-                <span class="message">Please enter your email address</span>
-                <input type="email" name="myEmail" id="myEmail">
-
-                <label for="myPhone">Phone Number:<span class="hidden required">*</span></label>
-                <span class="message">Please enter your phone number</span>
-                <input type="tel" name="myPhone" id="myPhone">
+            <form id="registerForm">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" placeholder="First Name">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Last Name">
+                <label for="myEmail">Email</label>
+                <input type="email" id="myEmail" name="email" placeholder="Email">
+                <label for="myPhone">Phone</label>
+                <input type="tel" id="myPhone" name="phone" placeholder="Phone">
                 
-                <input type="submit" name="objSubmit" id="objSubmit">
+                
+                <div class="message"></div>
+                <button type="submit" id="submitBtn">Submit</button>
             </form>
         </section>
 
-        <div id="modal2" class="hidden">
-            <div id="inner-modal2">
-                <p>There is already a user in local storage. Do you want to erase that user's information and save this information instead?</p>
-                <button id="confirm2">Yes, Add the New User to Storage</button>
-                <button id="cancel2">No, Do Not Replace the Original User in Storage</button>
-            </div>
+        <div id="dialog-confirm" title="Confirmation Dialog">
+            <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>Looks like you're already in our database! Would you like to change your login credentials?</p>
         </div>
     </main>
 
@@ -89,5 +79,7 @@
         <p>Copyright &copy;<span>2024</span> Victoria Le</p>
         <p><small>For academic purposes only</small></p>
     </footer>
+
+    <script async src="script.js"></script>
 </body>
 </html>

@@ -74,7 +74,9 @@ table {
 }
 
 body {
-    background-color: var(--white);
+    background-color: #F5F5F5;
+    background-image:  linear-gradient(#6ab1cda3 1.1px, transparent 1.1px), linear-gradient(to right, #4e96b28b 1.1px, #F5F5F5 1.1px);
+    background-size: 22px 22px;
     color: var(--black);
 }
 
@@ -93,7 +95,21 @@ h2 {
     font-size: 3em;
 }
 
-p, label, input, button, a {
+h4 {
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+h5 {
+    font-weight: 700;
+    font-size: 1.5rem;
+    background-color: var(--red);
+    padding: 5px 10px;
+    width: 125px;
+    color: var(--white);
+}
+
+p, label, input, button, a, li {
     font-family: "Vollkorn", serif;
     font-weight: 400;
     font-size: 1rem;
@@ -131,4 +147,242 @@ main {
     flex-direction: column;
     gap: 20vh;
     text-align: center;
+}
+
+
+/* --------------------- TOP PICKS --------------------- */
+
+.top-picks {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100vw;
+    height: 100vh;
+}
+.slides {
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    display: inline-block;
+}
+
+.slides img{
+    width: 50vw;
+    height: 80vh;
+    object-fit: cover;
+    z-index: 3;
+}
+
+#carousel h2 {
+    margin-bottom: 10px;
+}
+
+
+/* --------------------- RECIPE FINDER --------------------- */
+#findRecipes {
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+}
+
+#find {
+    display: grid;
+    grid-template-areas: 
+    "label label"
+    "input button";
+    gap: 20px;
+    justify-content: center;
+}
+
+#find label {
+    grid-area: label;
+}
+
+#find input {
+    max-width: 20vw;
+    padding: 10px 20px;
+    border-radius: 100px;
+    border: 2px solid var(--black);
+    transition: border 2s;
+    background-color: rgba(255, 255, 255, 0.516);
+}
+
+#filter:focus, #filter:active {
+    border: 2px solid var(--red);
+    color: var(--red);
+}
+
+#find button {
+    width: 80px;
+    border-radius: 50px;
+    border-style: none;
+    background-color: var(--red);
+    color: var(--white);
+    font-weight: 700;
+    transition: all 2s;
+}
+
+#find button:hover,  #find button:active{
+    cursor: pointer;
+    border: 2px solid var(--red);
+    background-color: transparent;
+    color: var(--red);
+}
+
+#recipes {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+#recipes img {
+    width:  350px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.recipes_display {
+    max-width: 350px;
+    display: flex;
+    flex-flow: column;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.card {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.bold {
+    font-weight: 800;
+}
+
+.card ol {
+    list-style: normal;
+    line-height: 140%;
+}
+
+.details {
+    padding: 15px;
+    border: none;
+    background-color: var(--red);
+    width: 4rem;
+    height: 4rem;
+    display: block;
+    position: relative;
+    left: 145px;
+    top: -60px;
+    transition: all 2s;
+    border-radius: 50px;
+}
+
+.details:hover {
+    background-color: var(--blue);
+}
+
+.expose {
+	display: block;
+	width: 2rem;
+	height: 2rem;
+	background-color: var(--white);
+	clip-path: polygon(10% 35%, 50% 55%, 90% 35%, 90% 50%, 50% 70%, 10% 50%);
+    transition: all 2s;
+    margin: 0 auto;
+}
+
+.details:hover .expose{
+    transform: rotate(-45deg);
+}
+
+.opened {
+	transform: rotate(-90deg);
+}
+
+
+
+
+
+/* --------------------- FORM --------------------- */
+#register .message {
+    color: var(--red);
+    font-family: "Vollkorn", serif;
+    margin-top: 5px;
+}
+
+.errorInput {
+    border: 2px solid var(--red);
+}
+
+form {
+    display: flex;
+    flex-flow: column;
+    width: 20vw;
+    margin: 0 auto;
+}
+
+form label {
+    margin-top: 20px
+}
+
+form input {
+    padding: 10px;
+    border-radius: 100px;
+    border: 2px solid var(--black);
+    transition: border 2s;
+    background-color: rgba(255, 255, 255, 0.516);
+}
+
+form input:focus, form input:active {
+    border: 2px solid var(--red);
+    color: var(--red);
+}
+
+form button {
+    margin: 20px auto;
+    border-radius: 50px;
+    padding: 15px;
+    width: 150px;
+    border-style: none;
+    background-color: var(--red);
+    color: var(--white);
+    font-weight: 700;
+    transition: all 2s;
+}
+
+form button:hover, form button:active{
+    cursor: pointer;
+    border: 2px solid var(--red);
+    background-color: transparent;
+    color: var(--red);
+}
+
+#register {
+    display: flex;
+    flex-flow: column;
+    gap: 10px;
+    margin-bottom: 100px;
+}
+
+
+
+
+/* --------------------- FOOTER --------------------- */
+
+footer {
+    background-color: var(--black);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 20vh;
+    justify-content: center;
+}
+
+footer p{
+    color: var(--white);
 }
